@@ -1,13 +1,9 @@
+import { EmailData } from '@/app/types'
 import { FC } from 'react'
 
-interface EmailTemplateProps {
-    name: string
-    email: string
-    subject: string
-    message: string
-}
+interface EmailTemplateProps extends EmailData {}
 
-export const EmailTemplate: FC<Readonly<EmailTemplateProps>> = ({ name, email, subject, message }) => (
+export const EmailTemplate: FC<Readonly<EmailTemplateProps>> = ({ name, email, subject, body }) => (
     <div>
         <h2>📨 New message from {name}</h2>
         <p>
@@ -15,7 +11,7 @@ export const EmailTemplate: FC<Readonly<EmailTemplateProps>> = ({ name, email, s
             <br />
             <strong>Subject</strong>: {subject}
         </p>
-        <p>{message}</p>
+        <p>{body}</p>
     </div>
 )
 

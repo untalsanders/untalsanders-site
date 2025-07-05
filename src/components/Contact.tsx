@@ -1,21 +1,25 @@
 'use client'
 
 import { sendEmail } from '@/app/actions'
+import { EmailData } from '@/app/types'
 import styles from '@/styles/Contact.module.css'
 import { ChangeEvent, FormEvent, useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 import { FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa'
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaPhone, FaXTwitter, FaYoutube } from 'react-icons/fa6'
 
+const notify = (message: string) =>
+    toast(message, {
+        position: 'top-center',
+    })
+
 export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [successMessage, setSuccessMessage] = useState('')
-    const [errorMessage, setErrorMessage] = useState('')
-
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<EmailData>({
         name: '',
         email: '',
         subject: '',
-        message: '',
+        body: '',
     })
 
     const handleFormChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -28,10 +32,28 @@ export default function Contact() {
 
     const handleFormSubmit = async (e: FormEvent) => {
         e.preventDefault()
+
+        if (!formData.name || !formData.email || !formData.body) {
+            setIsSubmitting(false)
+            notify('⚠️ Please fill in all fields.')
+            return
+        }
+
+        setIsSubmitting(true)
+
         try {
             await sendEmail(formData)
-        } catch (err) {
-            console.error(err)
+            notify('✅ Message sent successfully!')
+            setFormData({
+                name: '',
+                email: '',
+                subject: '',
+                body: '',
+            })
+        } catch (e) {
+            notify('An unexpected error occurred.')
+        } finally {
+            setIsSubmitting(false)
         }
     }
 
@@ -117,7 +139,7 @@ export default function Contact() {
                         <input name="subject" type="text" placeholder="Your Subject" onChange={handleFormChange} />
                         <label>Message</label>
                         <textarea
-                            name="message"
+                            name="body"
                             placeholder="Your Message"
                             rows={8}
                             onChange={handleFormChange}></textarea>
@@ -126,6 +148,7 @@ export default function Contact() {
                             {isSubmitting ? 'Sending...' : 'Send Message'}
                         </button>
                     </form>
+                    <Toaster />
                 </div>
             </div>
         </div>
