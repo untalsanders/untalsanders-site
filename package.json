@@ -16,7 +16,7 @@
         "@mdx-js/react": "3.1.0",
         "@next/mdx": "15.3.1",
         "@types/mdx": "2.0.13",
-        "next": "15.3.1",
+        "next": "15.3.5",
         "normalize.css": "8.0.1",
         "react": "19.1.0",
         "react-dom": "19.1.0",
@@ -37,5 +37,5 @@
     "engines": {
         "node": "22"
     },
-    "packageManager": "pnpm@10.12.4"
+    "packageManager": "pnpm@10.13.1"
 }
