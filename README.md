@@ -3,7 +3,7 @@
     <h3> :zap: Personal Website :zap:️ </h3>
 </div>
 
-![Screenshot untalsanders-site](screenshot.png 'screenshot-site')
+![Screenshot untalsanders-site](untalsanders_dot_com.png 'screenshot-site')
 <br>
 
 ## :checkered_flag: How to start
