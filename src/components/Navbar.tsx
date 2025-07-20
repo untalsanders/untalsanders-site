@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
+import { FaX } from 'react-icons/fa6'
 
 export function Navbar() {
     const pathname = usePathname()
@@ -19,6 +20,7 @@ export function Navbar() {
             </button>
             {isMenuOpen && (
                 <nav className={styles.MobileMenu}>
+                    <button className={styles.closeButton} onClick={handleMenuToggle} id='close-button'><FaX /></button>
                     <Link href="/#top" className={pathname === '/' ? 'active' : ''} onClick={handleMenuToggle}>
                         Home
                     </Link>
