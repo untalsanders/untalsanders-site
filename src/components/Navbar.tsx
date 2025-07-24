@@ -28,12 +28,6 @@ export function Navbar() {
                         About
                     </Link>
                     <Link
-                        href="/projects"
-                        className={pathname === '/projects' ? 'active' : ''}
-                        onClick={handleMenuToggle}>
-                        Projects
-                    </Link>
-                    <Link
                         href="/#contact"
                         className={pathname === '/contact' ? 'active' : ''}
                         onClick={handleMenuToggle}>
@@ -44,9 +38,6 @@ export function Navbar() {
             <nav className={styles.Navbar}>
                 <Link href="/#about" className={pathname === '/#about' ? 'active' : ''}>
                     About
-                </Link>
-                <Link href="/projects" className={pathname === '/projects' ? 'active' : ''}>
-                    Projects
                 </Link>
                 <Link href="/#services" className={pathname === '/#services' ? 'active' : ''}>
                     Services
