@@ -23,10 +23,10 @@ export default function Hero() {
                         <strong>6+ years</strong> of experience, and I want to work together and build something unique.
                     </p>
                     <div className={styles.heroBody__buttons}>
-                        <Link href="/projects">
+                        {/* <Link href="/projects">
                             <FaCode />
                             View Projects
-                        </Link>
+                        </Link> */}
                         <Link href="/#contact">
                             <FaHandshake />
                             Hire Me
