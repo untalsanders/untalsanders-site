@@ -27,6 +27,9 @@ export function Navbar() {
                     <Link href="/#about" className={pathname === '/about' ? 'active' : ''} onClick={handleMenuToggle}>
                         About
                     </Link>
+                    <Link href="/#services" className={pathname === '/#services' ? 'active' : ''}>
+                        Services
+                    </Link>
                     <Link
                         href="/#contact"
                         className={pathname === '/contact' ? 'active' : ''}
