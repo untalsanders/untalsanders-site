@@ -20,14 +20,19 @@ export function Navbar() {
             </button>
             {isMenuOpen && (
                 <nav className={styles.MobileMenu}>
-                    <button className={styles.closeButton} onClick={handleMenuToggle} id='close-button'><FaX /></button>
+                    <button className={styles.closeButton} onClick={handleMenuToggle} id="close-button">
+                        <FaX />
+                    </button>
                     <Link href="/#top" className={pathname === '/' ? 'active' : ''} onClick={handleMenuToggle}>
                         Home
                     </Link>
                     <Link href="/#about" className={pathname === '/about' ? 'active' : ''} onClick={handleMenuToggle}>
                         About
                     </Link>
-                    <Link href="/#services" className={pathname === '/#services' ? 'active' : ''}>
+                    <Link
+                        href="/#services"
+                        className={pathname === '/#services' ? 'active' : ''}
+                        onClick={handleMenuToggle}>
                         Services
                     </Link>
                     <Link
