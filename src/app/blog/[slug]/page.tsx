@@ -16,14 +16,12 @@ export default async function BlogPostPage(props: Params) {
     const content = await markdownToHtml(post.content || '')
 
     return (
-        <>
-            <div className="container">
-                <article>
-                    <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} />
-                    <PostBody content={content} />
-                </article>
-            </div>
-        </>
+        <div className="container">
+            <article>
+                <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} />
+                <PostBody content={content} />
+            </article>
+        </div>
     )
 }
 

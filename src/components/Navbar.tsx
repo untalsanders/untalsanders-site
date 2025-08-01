@@ -33,6 +33,11 @@ export function Navbar() {
                     </Link>
                 </li>
                 <li className={styles.NavItem}>
+                    <Link href="/blog" className={pathname === '/blog' ? styles.Active : ''}>
+                        Blog
+                    </Link>
+                </li>
+                <li className={styles.NavItem}>
                     <Link href="/#contact" className={pathname === '/#contact' ? styles.Active : ''}>
                         Contact
                     </Link>

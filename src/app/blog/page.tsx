@@ -1,6 +1,10 @@
+import { Container } from '@/components/container'
 import { HeroPost } from '@/components/hero-post'
+import { Intro } from '@/components/intro'
 import { PostPreview } from '@/components/post-preview'
 import { getAllPosts } from '@/lib/api'
+
+import styles from "@/styles/Blog.module.css"
 
 export const metadata = {
     title: 'Blog',
@@ -14,11 +18,8 @@ export default async function Page() {
 
     return (
         <>
-            <div className="container">
-                <h1>Blog</h1>
-                <p>Lee mis últimos artículos</p>
-            </div>
-            <div className="container">
+            <Intro />
+            <Container className={styles.BlogPageHero}>
                 <HeroPost
                     title={title ?? ''}
                     coverImage={coverImage ?? ''}
@@ -38,7 +39,7 @@ export default async function Page() {
                         excerpt={post.excerpt}
                     />
                 ))}
-            </div>
+            </Container>
         </>
     )
 }

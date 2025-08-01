@@ -48,7 +48,7 @@ li {
 }
 
 .container {
-    max-width: clamp(calc(20rem - 2.5rem), 80vw, 90rem);
+    max-width: clamp(calc(15rem - 2.5rem), 80vw, 90rem);
     margin: 0 auto;
 }
 
