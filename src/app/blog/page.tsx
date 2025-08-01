@@ -1,10 +1,15 @@
-import PostList from '@/features/blog/presentation/post-list/post-list'
-import { PostService } from '@/features/blog/application/services/PostService'
+import Link from 'next/link'
+import { formatDate, getBlogPosts } from './utils'
 import styles from '@/styles/Blog.module.css'
 
-const BlogPage = async () => {
-    const postService = new PostService()
-    const posts = await postService.getPosts()
+export const metadata = {
+    title: 'Blog',
+    description: 'Read my blog',
+}
+
+export default async function BlogPage() {
+    const allPosts = getBlogPosts()
+
     return (
         <>
             <div className={styles.BlogPageHero}>
@@ -15,11 +20,29 @@ const BlogPage = async () => {
                     </p>
                 </div>
             </div>
-            <div className="container">
-                <PostList posts={posts} />
+            <div
+                className="container"
+                style={{
+                    paddingBlock: '4rem',
+                }}>
+                {allPosts
+                    .sort((a, b) => {
+                        if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
+                            return -1
+                        }
+                        return 1
+                    })
+                    .map(post => (
+                        <Link key={post.slug} href={`/blog/${post.slug}`}>
+                            <div>
+                                <p>
+                                    <span>{formatDate(post.metadata.publishedAt, false)} ---- </span>
+                                    <span>{post.metadata.title}</span>
+                                </p>
+                            </div>
+                        </Link>
+                    ))}
             </div>
         </>
     )
 }
-
-export default BlogPage

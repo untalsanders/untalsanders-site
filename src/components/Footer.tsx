@@ -1,3 +1,5 @@
+'use client'
+
 import styles from '@/styles/Footer.module.css'
 
 const Copyright = () => <div>&copy; {new Date().getFullYear()} Sanders Gutiérrez. All rights reserved.</div>

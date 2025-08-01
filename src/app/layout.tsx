@@ -22,8 +22,8 @@ const poppins = Poppins({
 
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
-        <html lang="en" className={poppins.className}>
-            <body className={styles.Layout}>
+        <html lang="en" suppressHydrationWarning className={poppins.className}>
+            <body suppressHydrationWarning className={styles.Layout}>
                 <Header />
                 <main>{children}</main>
                 <Footer />

@@ -1,8 +1,8 @@
-import { PostUseCases } from '@/features/blog/domain/usecases/PostUseCases'
-import { Post } from '@/features/blog/domain/models/Post'
+import { RetrievePostUseCase } from '@/features/blog/domain/usecase/RetrievePostUseCase'
+import { Post } from '@/features/blog/domain/model/Post'
 import config from '@/config/config'
 
-export class PostService implements PostUseCases {
+export class PostService implements RetrievePostUseCase {
     private apiUrl: string = config.api.baseUrl
 
     async getPosts(): Promise<Post[]> {

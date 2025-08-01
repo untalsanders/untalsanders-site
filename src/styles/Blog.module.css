@@ -1,5 +1,6 @@
 .BlogPageHero {
-    background-color: #f96;
+    /* background-color: #f96; */
+    border-bottom: 1px solid #ccc;
     padding: 4rem 0;
 
     & > :first-child {

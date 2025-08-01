@@ -4,34 +4,34 @@
     flex-wrap: wrap;
     gap: 2rem;
 
-    & article {
+    article {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
 
-        & header {
+        header {
             display: flex;
             align-items: center;
             gap: 0.5rem;
 
-            & svg {
+            svg {
                 fill: #141414aa;
             }
 
-            & span {
+            span {
                 color: #141414aa;
                 font-weight: 400;
                 font-size: 0.875rem;
             }
         }
 
-        & footer {
-            & a {
+        footer {
+            a {
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
 
-                & svg {
+                svg {
                     fill: #141414aa;
                 }
             }

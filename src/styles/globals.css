@@ -49,12 +49,7 @@ li {
 
 .container {
     max-width: clamp(calc(20rem - 2.5rem), 80vw, 90rem);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.active {
-    color: #f9af16;
+    margin: 0 auto;
 }
 
 .link-button {
@@ -83,14 +78,3 @@ li {
         color: white;
     }
 }
-
-/* @media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-
-    body {
-        color: white;
-        background: black;
-    }
-} */
