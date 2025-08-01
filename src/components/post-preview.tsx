@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Avatar } from './avatar'
 import { CoverImage } from './cover-image'
 import { DateFormatter } from './date-formatter'
+import { Container } from './container'
 
 type Props = {
     title: string
@@ -15,10 +16,10 @@ type Props = {
 
 export function PostPreview({ title, coverImage, date, excerpt, author, slug }: Props) {
     return (
-        <div className="container">
-            <div>
+        <Container>
+            <picture>
                 <CoverImage title={title} src={coverImage} slug={slug} />
-            </div>
+            </picture>
             <h3>
                 <Link href={`/blog/${slug}`}>{title}</Link>
             </h3>
@@ -27,6 +28,6 @@ export function PostPreview({ title, coverImage, date, excerpt, author, slug }: 
             </div>
             <p>{excerpt}</p>
             <Avatar name={author.name} picture={author.picture} />
-        </div>
+        </Container>
     )
 }

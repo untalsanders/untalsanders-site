@@ -19,15 +19,19 @@ export default async function Page() {
     return (
         <>
             <Intro />
-            <Container className={styles.BlogPageHero}>
-                <HeroPost
-                    title={title ?? ''}
-                    coverImage={coverImage ?? ''}
-                    date={date ?? ''}
-                    author={author ?? { name: '', picture: '' }}
-                    slug={slug ?? ''}
-                    excerpt={excerpt ?? ''}
-                />
+            <Container className={styles.BlogPage}>
+                <section className={styles.BlogPageHero}>
+                    <h1 className={styles.titulo}>Featured Post</h1>
+                    <HeroPost
+                        title={title ?? ''}
+                        coverImage={coverImage ?? ''}
+                        date={date ?? ''}
+                        author={author ?? { name: '', picture: '' }}
+                        slug={slug ?? ''}
+                        excerpt={excerpt ?? ''}
+                    />
+                </section>
+                <h1 className={styles.titulo}>Recent Articles</h1>
                 {posts.length > 0 && posts.map(post => (
                     <PostPreview
                         key={post.slug}
