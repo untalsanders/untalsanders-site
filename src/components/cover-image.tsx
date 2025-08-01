@@ -3,7 +3,7 @@ import Link from 'next/link'
 type Props = {
     title: string
     src: string
-    slug: string
+    slug?: string
 }
 
 export function CoverImage({ title, src, slug }: Props) {

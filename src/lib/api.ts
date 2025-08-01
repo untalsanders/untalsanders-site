@@ -24,6 +24,10 @@ export const getFiles = async (dir: string) => {
     }
 }
 
+/**
+ * Get a single file from the content directory.
+ * @param slug The slug of the file to retrieve.
+ */
 export const getFile = (slug: string) => {
     const realSlug = slug.replace(/\.mdx$/, '')
     const fullPath = join(contentDirectory, `${realSlug}.mdx`)
@@ -32,6 +36,9 @@ export const getFile = (slug: string) => {
     return { ...data, slug: realSlug, content } as Post
 }
 
+/**
+ * Get all posts from the content directory.
+ */
 export const getAllPosts = async () => {
     const contentDirectory = join(process.cwd(), 'content')
     const slugs = await getFiles(contentDirectory)

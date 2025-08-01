@@ -1,3 +1,4 @@
+import { HeroPost } from '@/components/hero-post'
 import { PostPreview } from '@/components/post-preview'
 import { getAllPosts } from '@/lib/api'
 
@@ -7,7 +8,9 @@ export const metadata = {
 }
 
 export default async function Page() {
-    const posts = await getAllPosts()
+    const postsData = await getAllPosts()
+    const { title, coverImage, date, author, slug, excerpt } = postsData?.[0] || {}
+    const posts = postsData?.slice(1) || []
 
     return (
         <>
@@ -16,7 +19,15 @@ export default async function Page() {
                 <p>Lee mis últimos artículos</p>
             </div>
             <div className="container">
-                {posts?.map(post => (
+                <HeroPost
+                    title={title ?? ''}
+                    coverImage={coverImage ?? ''}
+                    date={date ?? ''}
+                    author={author ?? { name: '', picture: '' }}
+                    slug={slug ?? ''}
+                    excerpt={excerpt ?? ''}
+                />
+                {posts.length > 0 && posts.map(post => (
                     <PostPreview
                         key={post.slug}
                         title={post.title}
