@@ -16,6 +16,7 @@
         "@mdx-js/react": "3.1.0",
         "@next/mdx": "15.3.1",
         "@types/mdx": "2.0.13",
+        "gray-matter": "4.0.3",
         "next": "15.3.5",
         "next-mdx-remote": "5.0.0",
         "normalize.css": "8.0.1",
@@ -30,6 +31,7 @@
     "devDependencies": {
         "@types/node": "22.13.14",
         "@types/react": "19.0.12",
+        "@types/react-dom": "19.1.7",
         "eslint": "8.57.0",
         "eslint-config-next": "15.2.4",
         "eslint-config-prettier": "8.8.0",
