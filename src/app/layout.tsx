@@ -1,10 +1,8 @@
 import '@/styles/globals.css'
-import { Footer } from '@/components/Footer'
-import { RootLayoutProps } from './types'
+import styles from '@/styles/Layout.module.css'
+import { LayoutProps } from '@/types'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import { Header } from '@/components/Header'
-import styles from '@/styles/Layout.module.css'
 
 export const metadata: Metadata = {
     title: 'Sanders Gutiérrez',
@@ -20,13 +18,11 @@ const poppins = Poppins({
     style: ['italic', 'normal'],
 })
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function Layout({ children }: LayoutProps) {
     return (
         <html lang="en" suppressHydrationWarning className={poppins.className}>
             <body suppressHydrationWarning className={styles.Layout}>
-                <Header />
-                <main>{children}</main>
-                <Footer />
+                {children}
             </body>
         </html>
     )

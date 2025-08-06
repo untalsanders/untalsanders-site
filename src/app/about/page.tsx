@@ -1,5 +1,10 @@
 import About from '@/components/About'
+import RootLayout from '@/components/RootLayout'
 
 export default function AboutPage() {
-    return <About />
+    return (
+        <RootLayout>
+            <About />
+        </RootLayout>
+    )
 }

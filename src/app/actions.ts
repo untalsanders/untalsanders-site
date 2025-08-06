@@ -1,7 +1,7 @@
 'use server'
 
 import { Resend } from 'resend'
-import { EmailData } from './types'
+import { EmailData } from '../types'
 import { ReactElement } from 'react'
 import EmailTemplate from '@/components/EmailTemplate'
 
