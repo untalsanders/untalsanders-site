@@ -17,20 +17,18 @@ type Props = {
 
 export function HeroPost({ title, coverImage, date, excerpt, author, slug }: Props) {
     return (
-        <article className={styles.postHero}>
-            <picture className={styles.postHero__cover}>
-                <CoverImage className={styles.postHero__image} title={title} src={coverImage} slug={slug} />
-            </picture>
-            <div className={styles.postHero__content}>
-                <header className={styles.postHero__header}>
-                    <h3>
+        <article className={styles.heroPost}>
+            <CoverImage className={styles.heroPost__image} title={title} src={coverImage} slug={slug} />
+            <div className={styles.heroPost__content}>
+                <header className={styles.heroPost__header}>
+                    <h3 className={styles.heroPost__hearder_title}>
                         <Link href={`/blog/${slug}`}>{title}</Link>
                     </h3>
                 </header>
-                <section className={styles.postHero__body}>
+                <section className={styles.heroPost__body}>
                     <p>{excerpt}</p>
                 </section>
-                <footer className={styles.postHero__footer}>
+                <footer className={styles.heroPost__footer}>
                     <Avatar className={`${styles["avatar__name--display"]}`} name={author.name} picture={author.picture} />
                     <DateFormatter dateString={date} />
                 </footer>

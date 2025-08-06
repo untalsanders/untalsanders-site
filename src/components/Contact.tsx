@@ -1,7 +1,7 @@
 'use client'
 
 import { sendEmail } from '@/app/actions'
-import { EmailData } from '@/types'
+import { EmailData } from '@/shared/types/types'
 import styles from '@/styles/Contact.module.css'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'

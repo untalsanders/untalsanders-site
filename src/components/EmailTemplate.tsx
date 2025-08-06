@@ -1,4 +1,4 @@
-import { EmailData } from '@/app/types'
+import { EmailData } from '@/shared/types/types'
 import { FC } from 'react'
 
 interface EmailTemplateProps extends EmailData {}

@@ -1,8 +1,12 @@
 import { MDXRemote } from 'next-mdx-remote'
 import Image from 'next/image'
 import Link from 'next/link'
-import { createElement } from 'react'
+import { createElement, ReactNode } from 'react'
 import { highlight } from 'sugar-high'
+
+type Props = {
+    children?: ReactNode;
+}
 
 function Table({ data }) {
     let headers = data.headers.map((header, index) => <th key={index}>{header}</th>)
@@ -46,12 +50,12 @@ function RoundedImage(props) {
     return <Image alt={props.alt} className="rounded-lg" {...props} />
 }
 
-function Code({ children, ...props }) {
+function Code({ children, ...props }: Props) {
     let codeHTML = highlight(children)
     return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
-function slugify(str) {
+function slugify(str: string) {
     return str
         .toString()
         .toLowerCase()
@@ -62,8 +66,8 @@ function slugify(str) {
         .replace(/\-\-+/g, '-') // Replace multiple - with single -
 }
 
-function createHeading(level) {
-    const Heading = ({ children }) => {
+function createHeading(level: number) {
+    const Heading = ({ children }: Props) => {
         let slug = slugify(children)
         return createElement(
             `h${level}`,

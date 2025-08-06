@@ -4,7 +4,7 @@ import { Intro } from '@/components/intro'
 import { PostPreview } from '@/components/post-preview'
 import { getAllPosts } from '@/lib/api'
 
-import styles from "@/styles/Blog.module.css"
+import styles from '@/styles/Blog.module.css'
 
 export const metadata = {
     title: 'Blog',
@@ -32,17 +32,20 @@ export default async function Page() {
                     />
                 </section>
                 <h1 className={styles.titulo}>Recent Articles</h1>
-                {posts.length > 0 && posts.map(post => (
-                    <PostPreview
-                        key={post.slug}
-                        title={post.title}
-                        coverImage={post.coverImage}
-                        date={post.date}
-                        author={post.author}
-                        slug={post.slug}
-                        excerpt={post.excerpt}
-                    />
-                ))}
+                <div className={styles.articles}>
+                    {posts.length > 0 &&
+                        posts.map(post => (
+                            <PostPreview
+                                key={post.slug}
+                                title={post.title}
+                                coverImage={post.coverImage}
+                                date={post.date}
+                                author={post.author}
+                                slug={post.slug}
+                                excerpt={post.excerpt}
+                            />
+                        ))}
+                </div>
             </Container>
         </>
     )

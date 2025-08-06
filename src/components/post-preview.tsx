@@ -1,9 +1,9 @@
 import { type Author } from '@/interfaces/author'
+import styles from '@/styles/Blog.module.css'
 import Link from 'next/link'
 import { Avatar } from './avatar'
 import { CoverImage } from './cover-image'
 import { DateFormatter } from './date-formatter'
-import { Container } from './container'
 
 type Props = {
     title: string
@@ -16,18 +16,26 @@ type Props = {
 
 export function PostPreview({ title, coverImage, date, excerpt, author, slug }: Props) {
     return (
-        <Container>
+        <article className={styles.article}>
             <picture>
-                <CoverImage title={title} src={coverImage} slug={slug} />
+                <CoverImage className={styles.articleCover} title={title} src={coverImage} slug={slug} />
             </picture>
-            <h3>
-                <Link href={`/blog/${slug}`}>{title}</Link>
-            </h3>
-            <div>
-                <DateFormatter dateString={date} />
+            <div className={styles.articleContent}>
+                <h3 className={styles.articleTitle}>
+                    <Link href={`/blog/${slug}`}>{title}</Link>
+                </h3>
+                <header className={styles.articleHeader}>
+                    <div className={styles.articleFooter}>
+                        <Avatar name={author.name} picture={author.picture} />
+                    </div>
+                    <div>
+                        <DateFormatter dateString={date} />
+                    </div>
+                </header>
+                <section className="body">
+                    <p>{excerpt}</p>
+                </section>
             </div>
-            <p>{excerpt}</p>
-            <Avatar name={author.name} picture={author.picture} />
-        </Container>
+        </article>
     )
 }

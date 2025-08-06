@@ -3,7 +3,7 @@
 }
 
 .BlogPageHero {
-    padding-block-end: 4rem;
+    padding-block-end: 2rem;
 }
 
 .BlogPage__Header {
@@ -29,48 +29,48 @@
     margin-block: 2rem;
     text-decoration-line: underline;
     text-decoration-color: #ff9600;
-    text-underline-offset: .625rem;
-    word-spacing: .25rem;
+    text-underline-offset: 0.625rem;
+    word-spacing: 0.25rem;
 }
 
-.postHero {
+.heroPost {
     background-color: floralwhite;
     border: 1px solid #ff9600;
-    border-radius: .75rem;
+    border-radius: 0.75rem;
 }
 
-.postHero__cover {
-    grid-column: 1/2;
-    grid-row: 1/3;
-}
-
-.postHero__image {
-    border-radius: .75rem .75rem 0 0;
+.heroPost__image {
+    border-radius: 0.75rem 0.75rem 0 0;
     width: 100%;
     height: 20rem;
 }
 
-.postHero__content {
-    padding: 1.55rem;
+.heroPost__content {
+    padding: 1.5rem;
 }
 
-.postHero__header {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    padding-block: 1rem;
+.heroPost__header {
+    padding-block: 1.25rem;
 }
 
-.postHero__body {
-    grid-column: 2/3;
-    grid-row: 2/3;
+.heroPost__hearder_title {
+    a {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        font-weight: 800;
+    }
+}
+
+.heroPost__body {
     display: flex;
+
+    p {
+        font-size: clamp(1.1rem, 3vw, 1.25rem);
+        color: rgb(97, 97, 97);
+    }
 }
 
-.postHero__footer {
-    grid-column: 2/3;
-    grid-row: 2/3;
+.heroPost__footer {
     display: flex;
-    flex-wrap: wrap-reverse;
     align-items: center;
     justify-content: space-between;
     gap: 1.25rem;
@@ -80,7 +80,7 @@
 .avatar {
     display: flex;
     align-items: center;
-    gap: .625rem;
+    gap: 1.25rem;
 }
 
 .avatar__image {
@@ -89,6 +89,7 @@
 
 .avatar__name {
     font-weight: 600;
+    font-size: 1.25rem;
 }
 
 .avatar__name--display {
@@ -101,4 +102,57 @@
 
 .time {
     font-weight: 500;
+    color: #777;
+}
+
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+    gap: 2rem;
+    border: 1px solid #d4d4d4;
+    border-radius: .625rem;
+    padding: 1.25rem;
+}
+
+.article {
+    min-height: 25rem;
+    padding: 1.25rem;
+}
+
+.articleCover {
+    border-radius: .625rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+.articleContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.articleTitle {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-block-start: 1rem;
+        /* color: #ff9600; */
+}
+
+.articleHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block-start: 1rem;
+}
+
+
+
+.articleFooter {
+    /* padding-block: 1rem; */
+}
+
+
+.post {
+    padding-block: 3rem;
 }

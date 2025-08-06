@@ -4,6 +4,7 @@ import { getAllPosts, getFile } from '@/lib/api'
 import markdownToHtml from '@/lib/markdownToHtml'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import styles from "@/styles/Blog.module.css"
 
 export default async function BlogPostPage(props: Params) {
     const params = await props.params
@@ -17,7 +18,7 @@ export default async function BlogPostPage(props: Params) {
 
     return (
         <div className="container">
-            <article>
+            <article className={styles.post}>
                 <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} />
                 <PostBody content={content} />
             </article>

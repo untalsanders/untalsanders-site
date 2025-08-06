@@ -2,6 +2,7 @@ import { Author } from '@/interfaces/author'
 import { Avatar } from './avatar'
 import { CoverImage } from './cover-image'
 import { DateFormatter } from './date-formatter'
+import { PostTitle } from './post-title'
 
 type Props = {
     title: string
@@ -13,16 +14,10 @@ type Props = {
 export function PostHeader({ title, coverImage, date, author }: Props) {
     return (
         <>
-            <h1>{title}</h1>
-            <div>
-                <Avatar name={author.name} picture={author.picture} />
-            </div>
-            <div>
-                <CoverImage title={title} src={coverImage} />
-            </div>
-            <div>
-                <DateFormatter dateString={date} />
-            </div>
+            <PostTitle title={title} />
+            <Avatar name={author.name} picture={author.picture} />
+            <CoverImage title={title} src={coverImage} />
+            <DateFormatter dateString={date} />
         </>
     )
 }

@@ -1,6 +1,6 @@
 import { RetrievePostUseCase } from '@/features/blog/domain/usecase/RetrievePostUseCase'
 import { Post } from '@/features/blog/domain/model/Post'
-import config from '@/config/config'
+import config from '@/shared/config/config'
 
 export class PostService implements RetrievePostUseCase {
     private apiUrl: string = config.api.baseUrl

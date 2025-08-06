@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import styles from '@/styles/Layout.module.css'
-import { LayoutProps } from '@/types'
+import { LayoutProps } from '@/shared/types/types'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
