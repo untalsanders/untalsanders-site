@@ -12,10 +12,9 @@
         "server:fake": "json-server --watch db.json --port 8000"
     },
     "dependencies": {
-        "@mdx-js/loader": "3.1.0",
-        "@mdx-js/react": "3.1.0",
-        "@next/mdx": "15.3.1",
-        "@types/mdx": "2.0.13",
+        "@mdx-js/loader": "3.1.1",
+        "@mdx-js/react": "3.1.1",
+        "@next/mdx": "15.5.2",
         "date-fns": "4.1.0",
         "gray-matter": "4.0.3",
         "next": "15.5.2",
@@ -32,6 +31,7 @@
         "sugar-high": "0.9.3"
     },
     "devDependencies": {
+        "@types/mdx": "2.0.13",
         "@types/node": "22.13.14",
         "@types/react": "19.0.12",
         "@types/react-dom": "19.1.7",
@@ -43,7 +43,7 @@
     },
     "license": "BSL-1.0",
     "engines": {
-        "node": "22"
+        "node": ">=22"
     },
-    "packageManager": "pnpm@10.13.1"
+    "packageManager": "pnpm@10.15.1"
 }
