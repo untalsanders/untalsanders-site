@@ -1,12 +1,13 @@
-import { PostBody } from '@/components/post-body'
-import { PostHeader } from '@/components/post-hearder'
-import { getAllPosts, getFile } from '@/lib/api'
-import markdownToHtml from '@/lib/markdownToHtml'
+import { Container } from '@/components/container'
+import { getAllPosts, getFile } from '@/features/posts/infrastructure/api/api'
+import markdownToHtml from '@/features/posts/infrastructure/api/markdownToHtml'
+import { PostBody } from '@/features/posts/presentation/components/post-body'
+import { PostHeader } from '@/features/posts/presentation/components/post-hearder'
+import styles from '@/styles/Blog.module.css'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import styles from "@/styles/Blog.module.css"
 
-export default async function BlogPostPage(props: Params) {
+export default async function Page(props: Params) {
     const params = await props.params
     const post = getFile(params.slug)
 
@@ -17,12 +18,12 @@ export default async function BlogPostPage(props: Params) {
     const content = await markdownToHtml(post.content || '')
 
     return (
-        <div className="container">
-            <article className={styles.post}>
+        <Container>
+            <article className={styles.Post}>
                 <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} />
                 <PostBody content={content} />
             </article>
-        </div>
+        </Container>
     )
 }
 

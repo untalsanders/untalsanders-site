@@ -1,10 +1,10 @@
-import { Author } from '@/interfaces/author'
-import { CoverImage } from './cover-image'
+import { Author } from '@/features/posts/domain/models/Author'
 import Link from 'next/link'
-import { DateFormatter } from './date-formatter'
-import { Avatar } from './avatar'
+import { CoverImage } from './cover-image'
 
 import styles from '@/styles/Blog.module.css'
+import { Avatar } from './avatar'
+import { DateFormatter } from './date-formatter'
 
 type Props = {
     title: string
@@ -15,7 +15,7 @@ type Props = {
     slug: string
 }
 
-export function HeroPost({ title, coverImage, date, excerpt, author, slug }: Props) {
+export function PostFeatured({ title, coverImage, date, excerpt, author, slug }: Props) {
     return (
         <article className={styles.heroPost}>
             <CoverImage className={styles.heroPost__image} title={title} src={coverImage} slug={slug} />
@@ -29,7 +29,11 @@ export function HeroPost({ title, coverImage, date, excerpt, author, slug }: Pro
                     <p>{excerpt}</p>
                 </section>
                 <footer className={styles.heroPost__footer}>
-                    <Avatar className={`${styles["avatar__name--display"]}`} name={author.name} picture={author.picture} />
+                    <Avatar
+                        className={`${styles['avatar__name--display']}`}
+                        name={author.name}
+                        picture={author.picture}
+                    />
                     <DateFormatter dateString={date} />
                 </footer>
             </div>

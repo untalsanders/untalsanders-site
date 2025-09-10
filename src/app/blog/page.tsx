@@ -1,8 +1,8 @@
 import { Container } from '@/components/container'
-import { HeroPost } from '@/components/hero-post'
-import { Intro } from '@/components/intro'
-import { PostPreview } from '@/components/post-preview'
-import { getAllPosts } from '@/lib/api'
+import { getAllPosts } from '@/features/posts/infrastructure/api/api'
+import { Intro } from '@/features/posts/presentation/components/intro'
+import { PostFeatured } from '@/features/posts/presentation/components/post-featured'
+import { PostList } from '@/features/posts/presentation/components/post-list'
 
 import styles from '@/styles/Blog.module.css'
 
@@ -20,9 +20,9 @@ export default async function Page() {
         <>
             <Intro />
             <Container className={styles.BlogPage}>
-                <section className={styles.BlogPageHero}>
-                    <h1 className={styles.titulo}>Featured Post</h1>
-                    <HeroPost
+                <section className={styles.BlogHero}>
+                    <h1 className={styles.Blog__Section_title}>Featured Post</h1>
+                    <PostFeatured
                         title={title ?? ''}
                         coverImage={coverImage ?? ''}
                         date={date ?? ''}
@@ -31,21 +31,10 @@ export default async function Page() {
                         excerpt={excerpt ?? ''}
                     />
                 </section>
-                <h1 className={styles.titulo}>Recent Articles</h1>
-                <div className={styles.articles}>
-                    {posts.length > 0 &&
-                        posts.map(post => (
-                            <PostPreview
-                                key={post.slug}
-                                title={post.title}
-                                coverImage={post.coverImage}
-                                date={post.date}
-                                author={post.author}
-                                slug={post.slug}
-                                excerpt={post.excerpt}
-                            />
-                        ))}
-                </div>
+                <section id="recent-articles">
+                    <h1 className={styles.Blog__Section_title}>Recent Articles</h1>
+                    <PostList posts={posts} />
+                </section>
             </Container>
         </>
     )

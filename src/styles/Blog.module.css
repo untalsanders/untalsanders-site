@@ -2,28 +2,11 @@
     padding-block: 4rem;
 }
 
-.BlogPageHero {
+.BlogHero {
     padding-block-end: 2rem;
 }
 
-.BlogPage__Header {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    min-width: min(30%, 100%);
-
-    & span {
-        color: #141414aa;
-        font-weight: 700;
-    }
-
-    & h3 {
-        font-size: clamp(1.5rem, 2rem, 8vw);
-        font-weight: 900;
-    }
-}
-
-.titulo {
+.Blog__Section_title {
     font-weight: 900;
     font-size: clamp(1.75rem, 2vw, 3rem);
     margin-block: 2rem;
@@ -105,54 +88,6 @@
     color: #777;
 }
 
-.articles {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
-    gap: 2rem;
-    border: 1px solid #d4d4d4;
-    border-radius: .625rem;
-    padding: 1.25rem;
-}
-
-.article {
-    min-height: 25rem;
-    padding: 1.25rem;
-}
-
-.articleCover {
-    border-radius: .625rem;
-    object-fit: cover;
-    width: 100%;
-}
-
-.articleContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.articleTitle {
-        font-size: 1.5rem;
-        font-weight: 700;
-        padding-block-start: 1rem;
-        /* color: #ff9600; */
-}
-
-.articleHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block-start: 1rem;
-}
-
-
-
-.articleFooter {
-    /* padding-block: 1rem; */
-}
-
-
-.post {
+.Post {
     padding-block: 3rem;
 }

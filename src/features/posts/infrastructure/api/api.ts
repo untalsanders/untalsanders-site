@@ -1,6 +1,6 @@
 'use strict'
 
-import { Post } from '@/interfaces/post'
+import { Post } from '@/features/posts/domain/models/Post'
 import matter from 'gray-matter'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'

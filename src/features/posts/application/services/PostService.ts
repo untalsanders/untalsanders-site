@@ -1,5 +1,5 @@
-import { RetrievePostUseCase } from '@/features/blog/domain/usecase/RetrievePostUseCase'
-import { Post } from '@/features/blog/domain/model/Post'
+import { RetrievePostUseCase } from '@/features/posts/domain/usecases/RetrievePostUseCase'
+import { Post } from '@/features/posts/domain/models/Post'
 import config from '@/shared/config/config'
 
 export class PostService implements RetrievePostUseCase {
@@ -25,5 +25,9 @@ export class PostService implements RetrievePostUseCase {
         }
 
         return await response.json()
+    }
+
+    async getPostBySlug(slug: string): Promise<Post> {
+        throw new Error('Method not implemented.')
     }
 }

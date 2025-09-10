@@ -1,8 +1,9 @@
-import { Author } from './author'
+import { Author } from './Author'
 
-export type Post = {
-    slug: string
+export interface Post {
+    id: number
     title: string
+    slug: string
     excerpt: string
     coverImage: string
     date: string
