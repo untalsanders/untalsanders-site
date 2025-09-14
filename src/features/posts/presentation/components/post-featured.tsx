@@ -18,7 +18,7 @@ type Props = {
 export function PostFeatured({ title, coverImage, date, excerpt, author, slug }: Props) {
   return (
     <article className={styles.heroPost}>
-      <CoverImage className={styles.heroPost__image} title={title} src={coverImage} slug={slug} />
+      <CoverImage className={styles.heroPost__image} title={title} src={coverImage} />
       <div className={styles.heroPost__content}>
         <header className={styles.heroPost__header}>
           <h3 className={styles.heroPost__hearder_title}>
