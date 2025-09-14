@@ -1,93 +1,93 @@
 .BlogPage {
-    padding-block: 4rem;
+  padding-block: 4rem;
 }
 
 .BlogHero {
-    padding-block-end: 2rem;
+  padding-block-end: 2rem;
 }
 
 .Blog__Section_title {
-    font-weight: 900;
-    font-size: clamp(1.75rem, 2vw, 3rem);
-    margin-block: 2rem;
-    text-decoration-line: underline;
-    text-decoration-color: #ff9600;
-    text-underline-offset: 0.625rem;
-    word-spacing: 0.25rem;
+  font-weight: 900;
+  font-size: clamp(1.75rem, 2vw, 3rem);
+  margin-block: 2rem;
+  text-decoration-line: underline;
+  text-decoration-color: #ff9600;
+  text-underline-offset: 0.625rem;
+  word-spacing: 0.25rem;
 }
 
 .heroPost {
-    background-color: floralwhite;
-    border: 1px solid #ff9600;
-    border-radius: 0.75rem;
+  background-color: floralwhite;
+  border: 1px solid #ff9600;
+  border-radius: 0.75rem;
 }
 
 .heroPost__image {
-    border-radius: 0.75rem 0.75rem 0 0;
-    width: 100%;
-    height: 20rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  width: 100%;
+  height: 20rem;
 }
 
 .heroPost__content {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .heroPost__header {
-    padding-block: 1.25rem;
+  padding-block: 1.25rem;
 }
 
 .heroPost__hearder_title {
-    a {
-        font-size: clamp(1.5rem, 3vw, 2.5rem);
-        font-weight: 800;
-    }
+  a {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 800;
+  }
 }
 
 .heroPost__body {
-    display: flex;
+  display: flex;
 
-    p {
-        font-size: clamp(1.1rem, 3vw, 1.25rem);
-        color: rgb(97, 97, 97);
-    }
+  p {
+    font-size: clamp(1.1rem, 3vw, 1.25rem);
+    color: rgb(97, 97, 97);
+  }
 }
 
 .heroPost__footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.25rem;
-    padding-block-start: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-block-start: 1rem;
 }
 
 .avatar {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 }
 
 .avatar__image {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .avatar__name {
-    font-weight: 600;
-    font-size: 1.25rem;
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 .avatar__name--display {
-    display: none;
+  display: none;
 
-    @media (width >= 30rem) {
-        display: initial;
-    }
+  @media (width >= 30rem) {
+    display: initial;
+  }
 }
 
 .time {
-    font-weight: 500;
-    color: #777;
+  font-weight: 500;
+  color: #777;
 }
 
 .Post {
-    padding-block: 3rem;
+  padding-block: 3rem;
 }

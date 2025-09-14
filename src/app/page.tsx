@@ -5,12 +5,12 @@ import RootLayout from '@/components/RootLayout'
 import Services from '@/components/Services'
 
 export default function Page() {
-    return (
-        <RootLayout>
-            <Hero />
-            <About />
-            <Services />
-            <Contact />
-        </RootLayout>
-    )
+  return (
+    <RootLayout>
+      <Hero />
+      <About />
+      <Services />
+      <Contact />
+    </RootLayout>
+  )
 }

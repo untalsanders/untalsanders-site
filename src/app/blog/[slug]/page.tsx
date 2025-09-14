@@ -8,53 +8,53 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 export default async function Page(props: Params) {
-    const params = await props.params
-    const post = getFile(params.slug)
+  const params = await props.params
+  const post = getFile(params.slug)
 
-    if (!post) {
-        notFound()
-    }
+  if (!post) {
+    notFound()
+  }
 
-    const content = await markdownToHtml(post.content || '')
+  const content = await markdownToHtml(post.content || '')
 
-    return (
-        <Container>
-            <article className={styles.Post}>
-                <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} />
-                <PostBody content={content} />
-            </article>
-        </Container>
-    )
+  return (
+    <Container>
+      <article className={styles.Post}>
+        <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} />
+        <PostBody content={content} />
+      </article>
+    </Container>
+  )
 }
 
 type Params = {
-    params: Promise<{
-        slug: string
-    }>
+  params: Promise<{
+    slug: string
+  }>
 }
 
 export async function generateMetadata(props: Params): Promise<Metadata> {
-    const params = await props.params
-    const post = getFile(params.slug)
+  const params = await props.params
+  const post = getFile(params.slug)
 
-    if (!post) {
-        return notFound()
-    }
+  if (!post) {
+    return notFound()
+  }
 
-    const title = `${post.title} | Next.js Blog Example with Markdown`
+  const title = `${post.title} | Next.js Blog Example with Markdown`
 
-    return {
-        title,
-        openGraph: {
-            title,
-            images: [post.ogImage.url],
-        },
-    }
+  return {
+    title,
+    openGraph: {
+      title,
+      images: [post.ogImage.url],
+    },
+  }
 }
 
 export async function generateStaticParams() {
-    const posts = await getAllPosts()
-    return posts?.map(post => ({
-        slug: post.slug,
-    }))
+  const posts = await getAllPosts()
+  return posts?.map(post => ({
+    slug: post.slug,
+  }))
 }
