@@ -1,0 +1,91 @@
+---
+title: 'Arrays en Java'
+excerpt: 'Los arrays en Java son una estructura de datos que nos permiten almacenar múltiples valores del mismo tipo en una sola variable.'
+coverImage: '/images/cover-arrays-in-java.webp'
+date: '2023-02-25T05:35:07.322Z'
+author:
+  name: Sanders Gutiérrez
+  picture: '/images/authors/sanders.jpeg'
+ogImage:
+  url: '/images/cover.jpg'
+tags: 'Java'
+---
+
+Los arrays en Java son una estructura de datos que nos permiten almacenar múltiples valores del mismo tipo en una sola variable. Estos valores se almacenan en una secuencia ordenada y se pueden acceder a ellos mediante un índice.
+
+## Title 2
+
+Para declarar un array en Java, se debe especificar el tipo de datos que va a contener el array, seguido de corchetes cuadrados y el nombre del array. Por ejemplo, para declarar un array de enteros llamado **"numbers"**, se debe usar la siguiente sintaxis:
+
+```java
+int[] numbers;
+```
+
+### Title 3
+
+Para inicializar un array, se puede utilizar el operador **"new"** seguido del tipo de datos y el tamaño del array entre corchetes cuadrados. Por ejemplo, para inicializar un array de enteros con un tamaño de 5, se debe usar la siguiente sintaxis:
+
+```java
+numbers = new int[5];
+```
+
+También es posible inicializar un array al mismo tiempo que se declara. Por ejemplo, para declarar e inicializar un array de enteros con los valores 1, 2, 3, 4 y 5, se debe usar la siguiente sintaxis:
+
+```java
+int[] numbers = {1, 2, 3, 4, 5};
+```
+
+Para acceder a un elemento específico de un array, se debe usar el índice del elemento entre corchetes cuadrados. Por ejemplo, para acceder al segundo elemento del array **"numbers"**, se debe usar la siguiente sintaxis:
+
+```java
+numbers[1];
+```
+
+#### Title 4
+
+Es importante tener en cuenta que los índices de un array comienzan en cero. Por lo tanto, el primer elemento de un array tiene un índice de cero, el segundo elemento tiene un índice de uno, y así sucesivamente.
+
+Además de acceder a los elementos de un array, podemos recorrerlos utilizando bucles. Por ejemplo, para recorrer un array de enteros **"numbers"** y mostrar cada elemento en la consola, podemos utilizar el siguiente código:
+
+```java
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+```
+
+En este caso, "numeros.length" nos da la longitud del array, es decir, la cantidad de elementos que contiene. El bucle se ejecutará desde el índice cero hasta la longitud del array menos uno, y en cada iteración se mostrará el elemento correspondiente en la consola.
+
+También es posible utilizar bucles mejorados (for-each) para recorrer un array. Este tipo de bucle nos permite recorrer un array sin necesidad de utilizar un contador, y es especialmente útil cuando no necesitamos conocer el índice de cada elemento. Por ejemplo, para recorrer el mismo array **"numbers"** utilizando un bucle mejorado, podemos utilizar el siguiente código:
+
+```java
+for (int number : numbers) {
+    System.out.println(number);
+}
+```
+
+En este caso, **"number"** es una variable que toma el valor de cada elemento del array **"numbers"** en cada iteración del bucle. El bucle se ejecutará una vez por cada elemento del array, y en cada iteración se mostrará el valor correspondiente en la consola.
+
+En resumen, los arrays en Java son una herramienta útil para almacenar y manipular múltiples valores del mismo tipo en una sola variable. Conocer cómo declarar, inicializar y acceder a los elementos de un array es esencial para cualquier programador de Java.
+
+Este sería un ejemplo completo dentro de una clase Java.
+
+```java
+class ArraysInJava {
+    public static void main(String[] args) {
+        int[] numbers = { 10, 20, 30, 40, 50 };
+        System.out.println(numbers[1]);
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+        }
+
+		// Alternative Stream API
+        Arrays.stream(numbers).forEach(System.out::println)
+
+        // Short alternative for-each
+        for (int number : numbers) {
+            System.out.println(number);
+        }
+    }
+}
+```

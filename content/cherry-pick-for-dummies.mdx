@@ -1,0 +1,67 @@
+---
+title: 'Cherry-Pick for Dummies'
+excerpt: 'Hello, this is my first post'
+coverImage: '/images/cover-hello-world.webp'
+date: '2023-05-28T05:35:07.322Z'
+author:
+  name: Sanders Gutiérrez
+  picture: '/images/authors/sanders.jpeg'
+ogImage:
+  url: '/assets/blog/hello-world/cover.jpg'
+tags: 'git'
+---
+
+El cherry-pick es una función de Git que permite seleccionar un conjunto de cambios de una rama y aplicarlos a otra. Es una herramienta útil para cuando queremos incorporar un cambio específico a nuestra rama actual sin tener que fusionar toda la rama de desarrollo. Pero, **¿cómo podemos hacer un cherry-pick sin morir en el intento?**
+
+Aquí te dejo algunos pasos a seguir:
+
+1. Identifica el hash del commit que quieres aplicar en tu rama actual. Puedes encontrarlo en el historial de commits o en la rama de desarrollo.
+
+   ```bash
+   ❯ git log --graph --oneline --decorate
+   ```
+
+2. Cambia a la rama en la que quieres aplicar los cambios.
+
+   ```bash
+   ❯ git switch <nombre-de-rama>
+   ```
+
+3. Realiza el cherry-pick con el hash del commit que quieres aplicar.
+
+   ```bash
+   ❯ git cherry-pick <hash-del-commit>
+   ```
+
+4. Resuelve los conflictos, si es que los hay. En algunos casos, Git puede resolver los conflictos automáticamente, pero en otros, necesitarás hacerlo manualmente. Lo siguiente es un ejemplo:
+
+   ```bash
+   ❯ git cherry-pick d19e920
+   Auto-merging openapi.yml
+   CONFLICT (content): Merge conflict in openapi.yml
+   error: could not apply d19e920... chore: Agrego CategoryId al esquema de la API.
+   hint: After resolving the conflicts, mark them with
+   hint: "git add/rm <pathspec>", then run
+   hint: "git cherry-pick --continue".
+   hint: You can instead skip this commit with "git cherry-pick --skip".
+   hint: To abort and get back to the state before "git cherry-pick",
+   hint: run "git cherry-pick --abort".
+   ```
+
+5. Verifica que los cambios se hayan aplicado correctamente.
+
+   ```bash
+   git log
+   ```
+
+6. Si todo se ve bien, haz commit de los cambios.
+
+   ```bash
+   git commit -m "Mensaje de commit"
+   ```
+
+Es importante tener en cuenta que el cherry-pick puede generar conflictos si el cambio que queremos aplicar depende de otros cambios que no están presentes en nuestra rama actual. También es importante hacer un seguimiento cuidadoso de los cambios que estamos aplicando para evitar errores y mantener una buena gestión del historial de commits.
+
+Siguiendo estos pasos, podrás hacer un cherry-pick sin morir en el intento y aplicar cambios específicos a tu rama actual de forma eficiente y segura.
+
+¡Buena suerte!

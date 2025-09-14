@@ -5,55 +5,52 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
-import { FaX } from 'react-icons/fa6'
+import { Logo } from './Logo'
 
 export function Navbar() {
-    const pathname = usePathname()
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false)
 
-    const handleMenuToggle = () => setIsMenuOpen(!isMenuOpen)
+  const handleNavToggle = () => setIsOpen(!isOpen)
 
-    return (
-        <>
-            <button className={styles.ButtonMobile} onClick={handleMenuToggle}>
-                <FaBars />
-            </button>
-            {isMenuOpen && (
-                <nav className={styles.MobileMenu}>
-                    <button className={styles.closeButton} onClick={handleMenuToggle} id="close-button">
-                        <FaX />
-                    </button>
-                    <Link href="/#top" className={pathname === '/' ? 'active' : ''} onClick={handleMenuToggle}>
-                        Home
-                    </Link>
-                    <Link href="/#about" className={pathname === '/about' ? 'active' : ''} onClick={handleMenuToggle}>
-                        About
-                    </Link>
-                    <Link
-                        href="/#services"
-                        className={pathname === '/#services' ? 'active' : ''}
-                        onClick={handleMenuToggle}>
-                        Services
-                    </Link>
-                    <Link
-                        href="/#contact"
-                        className={pathname === '/contact' ? 'active' : ''}
-                        onClick={handleMenuToggle}>
-                        Contact
-                    </Link>
-                </nav>
-            )}
-            <nav className={styles.Navbar}>
-                <Link href="/#about" className={pathname === '/#about' ? 'active' : ''}>
-                    About
-                </Link>
-                <Link href="/#services" className={pathname === '/#services' ? 'active' : ''}>
-                    Services
-                </Link>
-                <Link href="/#contact" className={pathname === '/#contact' ? 'active' : ''}>
-                    Contact
-                </Link>
-            </nav>
-        </>
-    )
+  return (
+    <nav className={`container ${styles.Nav}`}>
+      <Logo />
+      <ul className={`${styles.NavList}`}>
+        <li className={styles.NavItem}>
+          <Link href="/#about" className={pathname === '/#about' ? styles.Active : ''}>
+            About
+          </Link>
+        </li>
+        <li className={styles.NavItem}>
+          <Link href="/projects" className={pathname === '/projects' ? styles.Active : ''}>
+            Projects
+          </Link>
+        </li>
+        <li className={styles.NavItem}>
+          <Link href="/#services" className={pathname === '/#services' ? styles.Active : ''}>
+            Services
+          </Link>
+        </li>
+        <li className={styles.NavItem}>
+          <Link href="/blog" className={pathname === '/blog' ? styles.Active : ''}>
+            Blog
+          </Link>
+        </li>
+        <li className={styles.NavItem}>
+          <Link href="/#contact" className={pathname === '/#contact' ? styles.Active : ''}>
+            Contact
+          </Link>
+        </li>
+      </ul>
+      <button className={styles.ButtonMobile} onClick={handleNavToggle}>
+        <FaBars />
+      </button>
+      {/* {isOpen && (
+                <button className={styles.ButtonClose} onClick={handleMenuToggle}>
+                    <FaX />
+                </button>
+            )} */}
+    </nav>
+  )
 }

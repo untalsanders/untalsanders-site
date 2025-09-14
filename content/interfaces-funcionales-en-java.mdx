@@ -1,0 +1,56 @@
+---
+title: 'Interfaces Funcionales en Java'
+excerpt: 'Las interfaces funcionales son una característica importante de Java introducida en la versión 8.'
+coverImage: '/images/cover-interfaces-funcionales-en-java.webp'
+date: '2023-03-04T05:35:07.322Z'
+author:
+  name: Sanders Gutiérrez
+  picture: '/images/authors/sanders.jpeg'
+ogImage:
+  url: '/assets/blog/hello-world/cover.jpg'
+tags: 'Java, Programming'
+---
+
+Las interfaces funcionales son una característica importante de Java introducida en la versión 8. Son interfaces que tienen solo un método abstracto y se pueden utilizar como objetivos para expresiones lambda y referencias de métodos. Esta nueva característica ayuda a escribir código más conciso y legible con menos líneas de código. En esta publicación de blog, discutiremos qué son las interfaces funcionales, cómo funcionan y cómo se utilizan en Java.
+
+## ¿Qué es una interfaz funcional?
+
+Una interfaz funcional es una interfaz que contiene solo un método abstracto. Este método se llama método funcional o método SAM (Single Abstract Method). Las interfaces funcionales se utilizan como base para expresiones lambda y referencias de métodos. Para que una interfaz se comporte como una iterfaz funcional debe marcarse con la anotación `@FunctionalInterface`. Si una interfaz está marcada como interfaz funcional, el compilador verificará que solo tenga un método abstracto. Si la interfaz tiene más de un método abstracto, el compilador generará un error.
+
+## ¿Cómo funcionan las Interfaces Funcionales?
+
+Las interfaces funcionales funcionan definiendo un método abstracto que puede ser anulado por una expresión lambda o una referencia de método. Una expresión lambda es una función anónima que se puede usar para implementar el método abstracto de una interfaz funcional. Una referencia de método es una sintaxis abreviada para una expresión lambda que se puede usar para llamar a un método que coincide con la firma del método abstracto.
+
+Por ejemplo, considera la siguiente interfaz funcional:
+
+```java
+@FunctionalInterface
+public interface Calculator {
+    int calculate(int a, int b);
+}
+```
+
+Esta interfaz tiene solamente un método abstracto llamado `calculate`. Toma dos parámetros enteros y devuelve un entero. Esta interfaz puede ser implementada usando una expresión lambda o una referencia a método como se muestra a continuación:
+
+```java
+Calculator addition = (a, b) -> a + b;
+int result = addition.calculate(2, 3); // result is 5
+
+Calculator subtraction = (a, b) -> a - b;
+result = subtraction.calculate(5, 3); // result is 2
+
+Calculator multiplication = Math::multiplyExact;
+result = multiplication.calculate(2, 3); // result is 6
+```
+
+En el ejemplo anterior, hemos implementado la interfaz `Calculator` utilizando expresiones lambda y una referencia de método.
+
+## ¿Cómo se utilizan las interfaces funcionales en Java?
+
+Las interfaces funcionales se usan ampliamente en Java para escribir expresiones lambda y referencias de métodos. Se utilizan en muchos lugares de la biblioteca estándar de Java, como el paquete `java.util.function`, que contiene muchas interfaces funcionales para casos de uso comunes. Algunos ejemplos de interfaces funcionales en este paquete son `Predicate`, `Function`, `Consumer`, y `Supplier`.
+
+Las interfaces funcionales son tambien usadas en la Java Stream API, la cual es usada para procesar colecciones de datos. La Stream API provee muchos métodos que toman interfaces funcionales como argumentos, como `filter`, `map`, `reduce`, y `forEach`.
+
+## Conclusión
+
+Las interfaces funcionales son una característica importante de Java introducida en la versión 8. Son interfaces que tienen solo un método abstracto y se pueden utilizar como objetivos para expresiones lambda y referencias de métodos. En este post, discutimos qué son las interfaces funcionales, cómo funcionan y cómo se usan en Java. Espero que este post te haya ayudado a entender el concepto de interfaces funcionales en Java.
