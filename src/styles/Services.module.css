@@ -1,75 +1,75 @@
 .services {
-    background-color: rgb(243, 249, 255);
-    background-image: url('/images/pattern-code.png');
-    padding: 6rem 0;
+  background-color: rgb(243, 249, 255);
+  background-image: url('/images/pattern-code.png');
+  padding: 6rem 0;
 
-    > * {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
+  > * {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 .servicesHeader {
-    text-align: center;
-    padding: 1.25rem 0;
+  text-align: center;
+  padding: 1.25rem 0;
 
-    h2 {
-        border-bottom: 0.25rem solid #f9af16;
-        font-size: 2.25rem;
-        display: inline;
+  h2 {
+    border-bottom: 0.25rem solid #f9af16;
+    font-size: 2.25rem;
+    display: inline;
 
-        span {
-            color: #f9af16;
-        }
+    span {
+      color: #f9af16;
     }
+  }
 
-    p {
-        padding: 1rem;
-        color: #14141499;
-        font-size: 1.125rem;
-        font-weight: 300;
-        max-width: 48rem;
-        margin: 0 auto;
-    }
+  p {
+    padding: 1rem;
+    color: #14141499;
+    font-size: 1.125rem;
+    font-weight: 300;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
 }
 
 .servicesItem {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2rem;
 
-    @media (width >= 20rem) {
-        flex-direction: row;
-    }
+  @media (width >= 20rem) {
+    flex-direction: row;
+  }
 }
 
 .article {
-    border: 1px solid #f9af16;
-    box-shadow: 0 0 30px #ccc;
-    border-radius: 0.75rem;
-    background-color: white;
-    padding: 2rem;
-    flex-grow: 1;
-    width: min(25rem, 100%);
+  border: 1px solid #f9af16;
+  box-shadow: 0 0 30px #ccc;
+  border-radius: 0.75rem;
+  background-color: white;
+  padding: 2rem;
+  flex-grow: 1;
+  width: min(25rem, 100%);
 
-    h3 {
-        font-size: 1.25rem;
-        display: flex;
-        align-items: center;
-        gap: 1.25rem;
+  h3 {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
 
-        svg {
-            align-self: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0.75rem 0;
-        }
+    svg {
+      align-self: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0.75rem 0;
     }
+  }
 
-    p {
-        color: #141414;
-        margin-top: 0.5rem;
-    }
+  p {
+    color: #141414;
+    margin-top: 0.5rem;
+  }
 }

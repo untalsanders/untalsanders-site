@@ -1,13 +1,6 @@
 .Header {
-    background-color: #1e1e1e;
-    color: white;
-    position: sticky;
-    top: 0;
-
-    & > * {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1.25rem;
-    }
+  background-color: #1e1e1e;
+  color: white;
+  position: sticky;
+  top: 0;
 }

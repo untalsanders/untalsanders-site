@@ -1,0 +1,51 @@
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+  gap: 1.25rem;
+}
+
+.article {
+  min-height: 25rem;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid #d4d4d4;
+  border-radius: 0.625rem;
+  transition: all 0.5s ease;
+
+  &:hover {
+    border: 1px solid #ff9600;
+    cursor: pointer;
+  }
+}
+
+.articleCover {
+  border-radius: 0.625rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.articleContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.articleTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-block-start: 1rem;
+}
+
+.articleFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block-start: 1rem;
+}
+
+.postTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-block-start: 1rem;
+}

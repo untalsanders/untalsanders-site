@@ -29,18 +29,21 @@
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/untalsanders/untalsanders-site.git
    cd untalsanders-site
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    ```
 
 3. **Set up environment variables**
    Create a `.env.local` file in the root directory and add your environment variables:
+
    ```env
    NEXT_PUBLIC_SITE_URL=https://untalsanders.com
    ```
@@ -85,6 +88,7 @@ This project is automatically deployed to Vercel. The deployment is triggered on
 ### Manual Deployment
 
 1. Build the project:
+
    ```bash
    pnpm run build
    ```

@@ -1,22 +1,51 @@
-.Navbar {
-    display: none;
-    user-select: none;
-
-    @media (width >= 51.25rem) {
-        display: flex;
-        align-items: center;
-    }
-
-    & > * {
-        padding: 1rem;
-        transition: color 200ms ease-in;
-
-        &:hover {
-            color: #f9af16;
-        }
-    }
+.Nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem 0;
 }
 
+.NavList {
+  display: none;
+  gap: 1rem;
+
+  @media (width >= 48rem) {
+    display: flex;
+  }
+}
+
+.NavItem {
+  color: #fff;
+
+  a {
+    &:hover {
+      color: #f9af16;
+      cursor: pointer;
+    }
+  }
+}
+
+.Active {
+  color: #f9af16;
+}
+
+.ButtonMobile {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+
+  & svg {
+    fill: #fff;
+    font-size: clamp(1rem, 1.25rem, 5vw);
+  }
+
+  @media (width >= 48rem) {
+    display: none;
+  }
+}
+
+/*
 .closeButton {
     display: flex;
     align-items: center;
@@ -30,7 +59,7 @@
     border-radius: 20%;
     border: 0;
     padding: 1rem;
-    transition: all 200ms ease-in;
+    transition: all 150ms ease-in-out;
 
     &:hover {
         background-color: #1e1e1e;
@@ -46,39 +75,24 @@
     }
 }
 
-.ButtonMobile {
-    background-color: transparent;
-    border: 0;
-    padding: 1rem;
-
-    & svg {
-        fill: #fff;
-        font-size: clamp(1rem, 1.5rem, 8vw);
-    }
-
-    @media (width >= 51.25rem) {
-        display: none;
-    }
-}
-
 .MobileMenu {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    /*background-color: white;*/
+    inset: 0;
     background: linear-gradient(45deg, #1e1e1e, #f9af16);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    transition: opacity 3s ease-in-out, transform 1s ease-in-out;
+}
+
+.MobileMenu__open {
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
 }
 
 .MobileMenu a {
-    color: black;
+    color: #1e1e1e;
     font-size: 2rem;
     padding: 1rem;
 
@@ -86,3 +100,4 @@
         color: #f9af16;
     }
 }
+*/
