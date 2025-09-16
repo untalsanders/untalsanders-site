@@ -1,17 +1,13 @@
 import RootLayout from '@/components/RootLayout'
+import HeroProject from '@/features/projects/presentation/components/hero.project'
 import styles from '@/styles/Projects.module.css'
 
 export default function ProjectsPage() {
   return (
     <RootLayout>
-      <div className={styles.ProjectsPage}>
-        <div className={`${styles.ProjectsPage__Header} container`}>
-          <span>- PROJECTS</span>
-          <header>
-            <h3>Recent completed works</h3>
-          </header>
-        </div>
+      <HeroProject title="Recent completed works" description="Here you can find the projects I've worked on." />
 
+      <div className={styles.ProjectsPage}>
         <section>
           <div className={`${styles.ProjectsPage__Items} container`}>
             <article>
