@@ -1,13 +1,14 @@
-import React from 'react'
+import { FC } from 'react'
+import styles from '../styles/hero.project.module.css'
 
 interface HeroProjectProps {
   title: string
   description: string
 }
 
-const HeroProject: React.FC<HeroProjectProps> = ({ title, description }) => {
+const HeroProject: FC<HeroProjectProps> = ({ title, description }) => {
   return (
-    <div className="hero-project">
+    <div className={styles.HeroProject}>
       <h1>{title}</h1>
       <p>{description}</p>
     </div>
