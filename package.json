@@ -1,7 +1,5 @@
 {
   "private": true,
-  "version": "0.0.0",
-  "author": "Sanders Gutiérrez <ing.sanders@gmail.com> (https://untalsanders.com)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -40,7 +38,6 @@
     "json-server": "1.0.0-beta.3",
     "prettier": "3.6.2"
   },
-  "license": "BSL-1.0",
   "engines": {
     "node": ">=22"
   },
