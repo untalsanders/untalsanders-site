@@ -23,11 +23,6 @@ export function Navbar() {
           </Link>
         </li>
         <li className={styles.NavItem}>
-          <Link href="/projects" className={pathname === '/projects' ? styles.Active : ''}>
-            Projects
-          </Link>
-        </li>
-        <li className={styles.NavItem}>
           <Link href="/#services" className={pathname === '/#services' ? styles.Active : ''}>
             Services
           </Link>
