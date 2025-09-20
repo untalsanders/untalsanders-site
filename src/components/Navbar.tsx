@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { Logo } from './Logo'
-import { FaX } from 'react-icons/fa6'
 
 export function Navbar() {
   const pathname = usePathname()
