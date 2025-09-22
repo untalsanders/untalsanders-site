@@ -1,6 +1,6 @@
+import { Props as LayoutProps } from '@/shared/types/types'
 import '@/styles/globals.css'
 import styles from '@/styles/Layout.module.css'
-import { LayoutProps } from '@/shared/types/types'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
@@ -21,8 +21,8 @@ const poppins = Poppins({
 export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning className={poppins.className}>
-      <body suppressHydrationWarning className={styles.Layout}>
-        {children}
+      <body suppressHydrationWarning>
+        <div id="root" className={styles.Layout}>{children}</div>
       </body>
     </html>
   )
