@@ -1,8 +1,8 @@
-import { Props as LayoutProps } from '@/shared/types/types'
+import { Props as RootLayoutProps } from '@/shared/types/types'
 import { Header } from './Header'
 import { Footer } from './Footer'
 
-export default function RootLayout({ children }: LayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <Header />
