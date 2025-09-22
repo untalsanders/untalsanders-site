@@ -1,4 +1,4 @@
-import { LayoutProps } from '@/shared/types/types'
+import { Props as LayoutProps } from '@/shared/types/types'
 import { Header } from './Header'
 import { Footer } from './Footer'
 

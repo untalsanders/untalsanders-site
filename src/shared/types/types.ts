@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export type LayoutProps = Readonly<{ children: ReactNode }>
+export type Props = Readonly<{ children: ReactNode }>
 
 export type EmailData = {
   name: string
