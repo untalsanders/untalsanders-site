@@ -9,7 +9,7 @@ const Copyright = () => (
 const MadeWith = () => (
   <div className="text-neutral-400">
     Made with
-    <FaHeart className="inline mx-1.5 fill-red-600" />
+    <FaHeart className="mx-1.5 inline fill-red-600" />
     by @UnTalSanders
   </div>
 )
