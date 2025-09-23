@@ -6,14 +6,6 @@
   text-rendering: optimizeLegibility;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 html,
 body {
   box-sizing: inherit;
@@ -28,13 +20,7 @@ body {
 }
 
 p {
-  margin-bottom: 0.75rem;
-}
-
-a {
-  font-weight: 500;
-  color: inherit;
-  text-decoration: none;
+  margin-block: 0.75rem;
 }
 
 img {
@@ -43,13 +29,8 @@ img {
   vertical-align: middle;
 }
 
-li {
-  list-style-type: none;
-}
-
-.container {
+.wrapper {
   max-width: clamp(calc(15rem - 2.5rem), 80vw, 90rem);
-  margin: 0 auto;
 }
 
 .link-button {
