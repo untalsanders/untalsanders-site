@@ -1,23 +1,25 @@
 'use client'
 
-import styles from '@/styles/Footer.module.css'
+import { FaHeart } from 'react-icons/fa6'
 
-const Copyright = () => <div>&copy; {new Date().getFullYear()} Sanders Gutiérrez. All rights reserved.</div>
+const Copyright = () => (
+  <div className="text-neutral-400">&copy; {new Date().getFullYear()} Sanders Gutiérrez. All rights reserved.</div>
+)
 
-const MadeIn = () => (
-  <div className={styles.Footer__Content_MadeIn}>
-    <span>Made with</span>
-    <img src="/images/icon-heart.svg" alt="love-heart" width={16} height={16} />
-    {'by @UnTalSanders'}
+const MadeWith = () => (
+  <div className="text-neutral-400">
+    Made with
+    <FaHeart className="inline mx-1.5 fill-red-600" />
+    by @UnTalSanders
   </div>
 )
 
 export function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={`container ${styles.Footer__Content}`}>
+    <footer className="bg-[#1e1e1e] py-5 text-center text-white">
+      <div className="wrapper mx-auto flex flex-col-reverse items-center gap-2 md:flex-row md:flex-wrap md:justify-between">
         <Copyright />
-        <MadeIn />
+        <MadeWith />
       </div>
     </footer>
   )
