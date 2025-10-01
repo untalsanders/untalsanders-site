@@ -4,13 +4,14 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 interface EditPostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export default async function EditPostPage({ params }: EditPostPageProps) {
-  const post = getFile(params.slug)
+  const { slug } = await params
+  const post = getFile(slug)
 
   if (!post) {
     notFound()
