@@ -42,33 +42,6 @@ object {
   max-width: clamp(calc(15rem - 2.5rem), 80vw, 90rem);
 }
 
-.link-button {
-  background-color: #1e1e1e;
-  border-radius: 0.25rem;
-  border: 1px solid #141414dd;
-  color: #fff;
-  font-weight: normal;
-  text-align: center;
-  padding: 0.75rem 2rem;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    background-color: transparent;
-    color: #141414dd;
-    cursor: pointer;
-  }
-}
-
-.link-button-inverse {
-  background-color: transparent;
-  color: #1e1e1e;
-
-  &:hover {
-    background-color: #1e1e1e;
-    color: white;
-  }
-}
-
 /* Code blocks */
 .code-block {
   position: relative;
