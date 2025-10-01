@@ -39,7 +39,7 @@ export function Navbar() {
         <Link href={'/'}>
           <Logo />
         </Link>
-        <SubSection label={pathname === '/' ? 'Blog' : ''} />
+        <SubSection label={pathname === '/' ? <span>Dev<span className='text-amber-600'>Pro</span></span> : ''} />
       </div>
       <ul className="hidden gap-4 md:flex">
         {navItems.map(item => (

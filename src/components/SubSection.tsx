@@ -1,6 +1,11 @@
 import Link from 'next/link'
 
-export function SubSection({ path = '', label = '' }) {
+interface SubSectionProps {
+  path?: string;
+  label?: string | React.ReactElement;
+}
+
+export function SubSection({ path = '', label = '' }: SubSectionProps) {
   return (
     <>
       <span
