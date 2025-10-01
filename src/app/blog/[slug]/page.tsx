@@ -1,9 +1,7 @@
-import { Container } from '@/components/container'
 import { getAllPosts, getFile } from '@/features/posts/infrastructure/api/api'
 import markdownToHtml from '@/features/posts/infrastructure/api/markdownToHtml'
 import { PostBody } from '@/features/posts/presentation/components/post-body'
 import { PostHeader } from '@/features/posts/presentation/components/post-hearder'
-import styles from '@/styles/Blog.module.css'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -18,12 +16,12 @@ export default async function Page(props: Params) {
   const content = await markdownToHtml(post.content || '')
 
   return (
-    <Container>
-      <article className={styles.Post}>
+    <div className="wrapper mx-auto">
+      <article className="py-16">
         <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} />
         <PostBody content={content} />
       </article>
-    </Container>
+    </div>
   )
 }
 
@@ -41,7 +39,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     return notFound()
   }
 
-  const title = `${post.title} | Next.js Blog Example with Markdown`
+  const title = `${post.title} | Blog`
 
   return {
     title,

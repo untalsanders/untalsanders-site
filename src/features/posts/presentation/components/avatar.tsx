@@ -1,5 +1,3 @@
-import styles from '@/styles/Blog.module.css'
-
 type Props = {
   name: string
   picture: string
@@ -8,9 +6,9 @@ type Props = {
 
 export function Avatar({ name, picture, className }: Props) {
   return (
-    <div className={styles.avatar}>
-      <img className={styles.avatar__image} src={picture} alt={name} width={40} height={40} />
-      <span className={`${styles.avatar__name} ${className}`}>{name}</span>
+    <div className="flex items-center gap-3">
+      <img className="w-10 h-10 rounded-full object-cover" src={picture} alt={name} />
+      <span className={`font-semibold text-lg text-gray-800 ${className}`}>{name}</span>
     </div>
   )
 }
