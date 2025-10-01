@@ -1,5 +1,4 @@
 import { getAllPosts, getFile } from '@/features/posts/infrastructure/api/api'
-import markdownToHtml from '@/features/posts/infrastructure/api/markdownToHtml'
 import { PostBody } from '@/features/posts/presentation/components/post-body'
 import { PostHeader } from '@/features/posts/presentation/components/post-hearder'
 import { Metadata } from 'next'
@@ -13,7 +12,7 @@ export default async function Page(props: Params) {
     notFound()
   }
 
-  const content = await markdownToHtml(post.content || '')
+  const content = post.content || ''
 
   return (
     <div className="wrapper mx-auto">

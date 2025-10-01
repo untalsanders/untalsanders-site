@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+/* @import 'sugar-high/themes/default.css'; */
 
 :root {
   line-height: 1.6;
@@ -65,4 +67,52 @@ object {
     background-color: #1e1e1e;
     color: white;
   }
+}
+
+/* Code blocks */
+.code-block {
+  position: relative;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.code-language {
+  position: absolute;
+  top: 2.5rem;
+  right: .75rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f8f8f2;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.code-pre {
+  color: #f8f8f2;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+}
+
+.code-pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Inline code */
+.prose code:not(pre code) {
+  background: #f1f1f1;
+  color: #d73a49;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 }
