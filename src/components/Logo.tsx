@@ -4,9 +4,9 @@ import LogoCircleSVG from './LogoCircleSVG'
 import LogoSquareSVG from './LogoSquareSVG'
 
 type Props = {
-  type?: 'circle' | 'square'
+  shape?: 'circle' | 'square'
 }
 
-export function Logo({ type = 'circle' }: Props) {
-  return type === 'circle' ? <LogoCircleSVG /> : <LogoSquareSVG />
+export function Logo({ shape = 'circle' }: Props) {
+  return shape === 'circle' ? <LogoCircleSVG /> : <LogoSquareSVG />
 }

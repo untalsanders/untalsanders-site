@@ -1,10 +1,7 @@
-import { Container } from '@/components/container'
 import { getAllPosts } from '@/features/posts/infrastructure/api/api'
 import { Intro } from '@/features/posts/presentation/components/intro'
 import { PostFeatured } from '@/features/posts/presentation/components/post-featured'
 import { PostList } from '@/features/posts/presentation/components/post-list'
-
-import styles from '@/styles/Blog.module.css'
 
 export const metadata = {
   title: 'Blog',
@@ -19,9 +16,18 @@ export default async function Page() {
   return (
     <>
       <Intro />
-      <Container className={styles.BlogPage}>
-        <section className={styles.BlogHero}>
-          <h1 className={styles.Blog__Section_title}>Featured Post</h1>
+      <div className="wrapper mx-auto py-16">
+        <section
+          style={{
+            paddingBlockEnd: '2rem',
+          }}>
+          <h1
+            className="my-8 text-[clamp(1.75rem,2vw,3rem)] font-black underline decoration-[#ff9600] underline-offset-10"
+            style={{
+              wordSpacing: '0.25rem',
+            }}>
+            Featured
+          </h1>
           <PostFeatured
             title={title ?? ''}
             coverImage={coverImage ?? ''}
@@ -32,10 +38,16 @@ export default async function Page() {
           />
         </section>
         <section id="recent-articles">
-          <h1 className={styles.Blog__Section_title}>Recent Articles</h1>
+          <h1
+            className="my-8 text-[clamp(1.75rem,2vw,3rem)] font-black underline decoration-[#ff9600] underline-offset-10"
+            style={{
+              wordSpacing: '0.25rem',
+            }}>
+            All Posts
+          </h1>
           <PostList posts={posts} />
         </section>
-      </Container>
+      </div>
     </>
   )
 }

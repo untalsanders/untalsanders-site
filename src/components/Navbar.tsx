@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { Logo } from './Logo'
+import { SubSection } from './SubSection'
 
 const navItems = [
   {
@@ -33,7 +34,12 @@ export function Navbar() {
 
   return (
     <nav className="wrapper mx-auto flex items-center justify-between gap-4 py-4">
-      <Logo />
+      <div className="flex items-center">
+        <Link href={'/'}>
+          <Logo />
+        </Link>
+        <SubSection label={pathname === '/' ? 'Blog' : ''} />
+      </div>
       <ul className="hidden gap-4 md:flex">
         {navItems.map(item => (
           <li key={item.label} className="hover:cursor-pointer hover:text-[#f9af16]">

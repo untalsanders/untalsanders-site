@@ -4,7 +4,7 @@ import styles from '@/styles/intro.module.css'
 export function Intro() {
   return (
     <div className={`${styles.intro}`}>
-      <Container className={styles.introContainer}>
+      <div className="wrapper mx-auto">
         <section className={styles.greeting}>
           <h1 className={styles.title}>
             Welcome<span>!</span>
@@ -25,7 +25,7 @@ export function Intro() {
         <section className={styles.imageContainer}>
           <img className={styles.image} src="/images/undraw_mind-map_i9bv.svg" alt="undraw_mind-map_i9bv.svg" />
         </section>
-      </Container>
+      </div>
     </div>
   )
 }
