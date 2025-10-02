@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { FaBars, FaTimes, FaUser, FaTools, FaBlog, FaEnvelope } from 'react-icons/fa'
+import { FaBars, FaTimes, FaUser, FaTools, FaBlog, FaEnvelope, FaHome } from 'react-icons/fa'
 import { Logo } from './Logo'
 import { SubSection } from './SubSection'
 
@@ -64,6 +64,10 @@ export function Navbar() {
           <FaTimes />
         </button>
         <ul className="flex flex-col gap-8 text-xl text-gray-800 dark:text-white">
+          <Link href="/" onClick={() => setIsOpen(false)} className={`hover:text-[#f9af16] text-3xl flex items-center gap-4`}>
+                <FaHome />
+                Home
+              </Link>
           {navItems.map(item => (
             <li key={item.label}>
               <Link href={item.path} onClick={() => setIsOpen(false)} className={`hover:text-[#f9af16] text-3xl ${pathname === item.path ? 'text-[#f9af16]' : ''} flex items-center gap-4`}>
