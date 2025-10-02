@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaUser, FaTools, FaBlog, FaEnvelope } from 'react-icons/fa'
 import { Logo } from './Logo'
 import { SubSection } from './SubSection'
 
@@ -11,18 +11,22 @@ const navItems = [
   {
     label: 'About',
     path: '/#about',
+    icon: FaUser,
   },
   {
     label: 'Services',
     path: '/#services',
+    icon: FaTools,
   },
   {
     label: 'Blog',
     path: '/blog',
+    icon: FaBlog,
   },
   {
     label: 'Contact',
     path: '/contact',
+    icon: FaEnvelope,
   },
 ]
 
@@ -54,24 +58,23 @@ export function Navbar() {
         <FaBars className="size-5 fill-white text-[clamp(1rem,1.25rem,5vw)]" />
       </button>
     </nav>
-    {isOpen && (
-      <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center transition-opacity duration-300">
-        <div className="bg-white dark:bg-gray-800 w-full h-full flex flex-col items-center justify-center relative">
-          <button onClick={handleNavToggle} className="absolute top-4 right-4 text-2xl text-gray-800 dark:text-white">
-            <FaTimes />
-          </button>
-          <ul className="flex flex-col gap-8 text-xl text-gray-800 dark:text-white">
-            {navItems.map(item => (
-              <li key={item.label}>
-                <Link href={item.path} onClick={() => setIsOpen(false)} className={`hover:text-[#f9af16] ${pathname === item.path ? 'text-[#f9af16]' : ''}`}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div className={`fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`bg-white dark:bg-gray-800 w-full h-full flex flex-col items-center justify-center relative transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <button onClick={handleNavToggle} className="absolute top-4 right-4 text-2xl text-gray-800 dark:text-white">
+          <FaTimes />
+        </button>
+        <ul className="flex flex-col gap-8 text-xl text-gray-800 dark:text-white">
+          {navItems.map(item => (
+            <li key={item.label}>
+              <Link href={item.path} onClick={() => setIsOpen(false)} className={`hover:text-[#f9af16] text-3xl ${pathname === item.path ? 'text-[#f9af16]' : ''} flex items-center gap-4`}>
+                <item.icon className="size-5" />
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-    )}
+    </div>
     </>
   )
 }
