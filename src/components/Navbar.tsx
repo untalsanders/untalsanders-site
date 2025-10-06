@@ -3,20 +3,15 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { FaBars, FaTimes, FaUser, FaTools, FaBlog, FaEnvelope, FaHome } from 'react-icons/fa'
+import { FaBars, FaBlog, FaEnvelope, FaHome, FaTimes, FaUser } from 'react-icons/fa'
 import { Logo } from './Logo'
 import { SubSection } from './SubSection'
 
 const navItems = [
   {
     label: 'About',
-    path: '/#about',
+    path: '/about',
     icon: FaUser,
-  },
-  {
-    label: 'Services',
-    path: '/#services',
-    icon: FaTools,
   },
   {
     label: 'Blog',
@@ -47,7 +42,7 @@ export function Navbar() {
       </div>
       <ul className="hidden gap-4 md:flex">
         {navItems.map(item => (
-          <li key={item.label} className="hover:cursor-pointer hover:text-[#f9af16]">
+          <li key={item.label} className="hover:cursor-pointer hover:text-[#f9af16] select-none">
             <Link href={item.path} className={pathname === item.path ? 'text-[#f9af16]' : ''}>
               {item.label}
             </Link>
